@@ -1,0 +1,249 @@
+/* Terminal Game Styles - Hack The Terminal */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    color: #00ff00;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.terminal-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    background: #000000;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #2a2a2a;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn.close {
+    background: #ff5f56;
+}
+
+.btn.minimize {
+    background: #ffbd2e;
+}
+
+.btn.maximize {
+    background: #27ca3f;
+}
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #000000;
+    position: relative;
+}
+
+#terminal-output {
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    color: #00ff00;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.command {
+    color: #ffff00;
+    background: rgba(255, 255, 0, 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#command-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    flex: 1;
+    caret-color: transparent;
+}
+
+.cursor {
+    color: #00ff00;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.output-line {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.error {
+    color: #ff4444;
+}
+
+.success {
+    color: #44ff44;
+}
+
+.info {
+    color: #4444ff;
+}
+
+.warning {
+    color: #ffaa00;
+}
+
+/* Command output styles */
+.ascii-art {
+    color: #00ffff;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.project-item {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 3px solid #00ff00;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+.project-title {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.project-desc {
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.help-command {
+    display: flex;
+    margin: 5px 0;
+}
+
+.help-command .cmd {
+    color: #ffff00;
+    width: 120px;
+    font-weight: bold;
+}
+
+.help-command .desc {
+    color: #aaa;
+}
+
+/* Theme variations */
+.theme-matrix {
+    --primary: #00ff00;
+    --secondary: #00ffff;
+    --accent: #ffff00;
+    --bg: #000000;
+}
+
+.theme-hacker {
+    --primary: #00ff41;
+    --secondary: #ff0080;
+    --accent: #ffff00;
+    --bg: #0a0a0a;
+}
+
+.theme-retro {
+    --primary: #00ffff;
+    --secondary: #ff00ff;
+    --accent: #ffff00;
+    --bg: #1a0033;
+}
+
+/* Scrollbar styling */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .terminal-container {
+        width: 95%;
+        height: 90vh;
+    }
+    
+    .terminal-body {
+        padding: 15px;
+    }
+    
+    #command-input {
+        font-size: 14px;
+    }
+}
